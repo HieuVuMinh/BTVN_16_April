@@ -102,28 +102,31 @@ public class PersonnelManagement {
     }
 
     //Tìm kiếm thông tin theo tên nhân viên
-    public void findEmployees(String nameEmployees) {
-        Officers officers = findEmployeesByName(nameEmployees);
-        if (officers == null) {
-            System.out.println(notFound);
-        } else {
-            System.out.println(officers);
-        }
-    }
+//    public void findEmployees(String nameEmployees) {
+//        Officers officers = findEmployeesByName(nameEmployees);
+//        if (officers == null) {
+//            System.out.println(notFound);
+//        } else {
+//            System.out.println(officers);
+//        }
+//    }
 
-    public Officers findEmployeesByName(String nameEmployees) {
+    public void findEmployeesByName(String nameEmployees) {
         int count = -1;
+        List<Officers> nameArray = new ArrayList<>();
         for (int i = 0; i < officersList.size(); i++) {
             Officers officers = officersList.get(i);
             String name = officers.getName();
             if (name.equals(nameEmployees)) {
                 count = i;
-                break;
+                nameArray.add(officers);
             }
         }
         if (count == -1) {
-            return null;
+            System.out.println(notFound);
         }
-        return officersList.get(count);
+        for (int i = 0; i < nameArray.size(); i++) {
+            System.out.println(nameArray.get(i));
+        }
     }
 }

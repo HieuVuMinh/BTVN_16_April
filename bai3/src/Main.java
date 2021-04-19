@@ -28,7 +28,7 @@ public class Main {
                     sc.nextLine();
                     System.out.println(nameEmployees);
                     String name = sc.nextLine();
-                    personnelManagement.findEmployees(name);
+                    personnelManagement.findEmployeesByName(name);
                     break;
                 }
                 case 4: {
